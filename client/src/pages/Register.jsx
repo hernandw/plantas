@@ -1,9 +1,9 @@
 import { useState } from "react";
-import {useNavigate} from "react-router-dom"
-import axios from "axios"
+
+
 
 const Register = () => {
-  const navigate = useNavigate();
+  
   const [nombre, setNombre] = useState('')
   const [email, setEmail] = useState('')
   const [direccion, setDireccion] = useState('')
@@ -13,7 +13,7 @@ const Register = () => {
     try {
       const body = { nombre, email, direccion, password }
       console.log('cuerpo', body)
-      await fetch("http://localhost:3000/usuarios", {
+      await fetch("https://plantasbk.onrender.com/usuarios", {
         method: "POST",
         body: JSON.stringify(body),
         headers: {
@@ -22,7 +22,7 @@ const Register = () => {
       });
       
       alert('Usuario creado con exito')
-      window.location = '/'
+      
     } catch (error) {
       alert('Hubo un error')
       console.log(error.message)
