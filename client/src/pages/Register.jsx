@@ -9,7 +9,8 @@ const Register = () => {
   const [direccion, setDireccion] = useState('')
   const [password, setPassword] = useState('')
 
-  const registrarUsuario=async()=>{
+  const registrarUsuario = async (e) => {
+    e.preventDefault();
     try {
       const body = { nombre, email, direccion, password }
       console.log('cuerpo', body)
